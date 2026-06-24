@@ -2,7 +2,7 @@
 
 A [Typst](https://typst.app) template for producing formatted PDF documents following ITS (Institut Teknologi Sepuluh Nopember) layout guidelines.
 
-[![Compile & Deploy](https://github.com/information-retrieval-4/mochi-proposal/actions/workflows/compile.yml/badge.svg)](https://github.com/information-retrieval-4/mochi-proposal/actions/workflows/compile.yml)
+[![Compile & Deploy](https://github.com/information-retrieval-4/Report/actions/workflows/compile.yml/badge.svg)](https://github.com/information-retrieval-4/Report/actions/workflows/compile.yml)
 
 **[Preview PDF](https://information-retrieval-4.github.io/Report/proposal.pdf)**
 
