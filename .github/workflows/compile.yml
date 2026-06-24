@@ -1,0 +1,46 @@
+name: Compile & Deploy
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: typst-community/setup-typst@v3
+
+      - name: Compile PDF
+        run: typst compile Proposal.typ proposal.pdf
+
+      - name: Prepare deploy directory
+        run: |
+          mkdir -p dist
+          cp proposal.pdf dist/proposal.pdf
+          printf '<meta http-equiv="refresh" content="0; url=proposal.pdf">\n' > dist/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: compile
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
