@@ -1,8 +1,10 @@
-# ITS Document Template
+# MOCHI: Minecraft Object Comprehension & Hybrid Indexing : Report
 
 A [Typst](https://typst.app) template for producing formatted PDF documents following ITS (Institut Teknologi Sepuluh Nopember) layout guidelines.
 
-[![Compile & Deploy](https://github.com/<username>/<repo>/actions/workflows/compile.yml/badge.svg)](https://github.com/<username>/<repo>/actions/workflows/compile.yml)
+[![Compile & Deploy](https://github.com/information-retrieval-4/mochi-proposal/actions/workflows/compile.yml/badge.svg)](https://github.com/information-retrieval-4/mochi-proposal/actions/workflows/compile.yml)
+
+**[Preview PDF](https://information-retrieval-4.github.io/Report/proposal.pdf)**
 
 ---
 
@@ -22,11 +24,13 @@ Choose one:
 
 ```bash
 # Compile once
-typst compile Proposal.typ proposal.pdf
+typst compile --font-path ./font/ Laporan-final-project.typ proposal.pdf
 
 # Watch mode — recompiles automatically on every save
-typst watch Proposal.typ proposal.pdf
+typst watch --font-path ./font/ Laporan-final-project.typ proposal.pdf
 ```
+
+> Fonts (Times New Roman, Trebuchet MS) are bundled in the `font/` folder and must be passed explicitly via `--font-path` since they are not included in the default Typst font set.
 
 ### Option 2 — VS Code with Tinymist
 
