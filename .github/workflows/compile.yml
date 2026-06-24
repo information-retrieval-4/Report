@@ -23,7 +23,7 @@ jobs:
       - uses: typst-community/setup-typst@v3
 
       - name: Compile PDF
-        run: typst compile Proposal.typ proposal.pdf
+        run: typst compile Laporan-final-project.typ proposal.pdf
 
       - name: Prepare deploy directory
         run: |
